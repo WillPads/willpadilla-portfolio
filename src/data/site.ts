@@ -15,6 +15,7 @@ export const site = {
 
 export const nav = [
   { label: "About", href: "#about" },
+  { label: "PixelDerm", href: "#flagship" },
   { label: "Projects", href: "#projects" },
   { label: "Contact", href: "#contact" },
 ];
