@@ -1,61 +1,103 @@
-import { Code, ExternalLink } from "lucide-react";
 import type { Project } from "@/data/projects";
 import StatusBadge from "@/components/ui/StatusBadge";
+import DeviceFrame from "@/components/ui/DeviceFrame";
+
+const accentBorder = {
+  mono: "hover:border-white",
+  green: "hover:border-emerald-400",
+  "blue-purple": "hover:border-t-blue-500 hover:border-b-purple-500",
+} as const;
+
+const accentTitle = {
+  mono: "group-hover:text-white",
+  green: "group-hover:text-emerald-300",
+  "blue-purple": "group-hover:text-blue-300",
+} as const;
+
+const accentCta = {
+  mono: "group-hover:text-white",
+  green: "group-hover:text-emerald-300",
+  "blue-purple": "group-hover:text-purple-300",
+} as const;
 
 export default function ProjectCard({ project }: { project: Project }) {
-  const Icon = project.icon;
+  const isCompleted = project.status === "completed";
 
   return (
-    <div className="group relative flex flex-col gap-4 overflow-hidden rounded-2xl border border-white/[.08] bg-white/[.02] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-indigo-400/30 hover:bg-white/[.04] hover:shadow-[0_0_40px_-12px_rgba(99,102,241,0.35)]">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -right-8 -top-8 h-32 w-32 rounded-full bg-indigo-500/0 blur-2xl transition-colors duration-300 group-hover:bg-indigo-500/20"
-      />
+    <div
+      className={`group relative flex h-full flex-col gap-5 overflow-hidden border border-white/15 bg-black p-6 transition-colors duration-300 sm:p-8 ${accentBorder[project.accent]}`}
+    >
+      {project.accent === "mono" && (
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-white/0 blur-3xl transition-colors duration-500 group-hover:bg-white/10"
+        />
+      )}
+      {project.accent === "green" && (
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-emerald-500/0 blur-3xl transition-colors duration-500 group-hover:bg-emerald-500/15"
+        />
+      )}
+      {project.accent === "blue-purple" && (
+        <>
+          <div
+            aria-hidden
+            className="pointer-events-none absolute -left-10 -top-10 h-40 w-40 rounded-full bg-blue-600/0 blur-3xl transition-colors duration-500 group-hover:bg-blue-600/20"
+          />
+          <div
+            aria-hidden
+            className="pointer-events-none absolute -bottom-10 -right-10 h-40 w-40 rounded-full bg-purple-600/0 blur-3xl transition-colors duration-500 group-hover:bg-purple-600/20"
+          />
+        </>
+      )}
 
       <div className="relative flex items-start justify-between gap-3">
-        <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/[.1] bg-white/[.03] text-indigo-300 transition-colors duration-300 group-hover:border-indigo-400/30 group-hover:bg-indigo-500/10">
-          <Icon size={20} />
+        <div className="flex flex-col gap-1">
+          <h3
+            className={`text-xl font-bold uppercase tracking-tight transition-colors duration-300 ${accentTitle[project.accent]}`}
+          >
+            {project.title}
+          </h3>
+          <p className="text-[11px] uppercase tracking-widest text-zinc-500">
+            {project.stack.join(" / ")}
+          </p>
         </div>
         <StatusBadge status={project.status} />
       </div>
 
-      <div className="relative flex flex-col gap-1.5">
-        <h3 className="text-lg font-semibold tracking-tight">{project.title}</h3>
-        <p className="text-sm text-zinc-400">{project.tagline}</p>
+      <p className="relative text-sm text-zinc-400">{project.description}</p>
+
+      <div
+        className={
+          project.device === "mobile"
+            ? "relative flex gap-3 overflow-x-auto pt-2"
+            : "relative grid grid-cols-1 gap-3 pt-2 sm:grid-cols-2"
+        }
+      >
+        {project.screenshots
+          ? project.screenshots.map((shot) => (
+              <DeviceFrame
+                key={shot.src}
+                variant={project.device}
+                src={shot.src}
+                alt={shot.alt}
+              />
+            ))
+          : Array.from({ length: project.screenshotCount }).map((_, i) => (
+              <DeviceFrame key={i} variant={project.device} />
+            ))}
       </div>
 
-      <p className="relative text-sm text-zinc-500">{project.description}</p>
-
-      <div className="relative mt-auto flex flex-wrap gap-2 pt-2">
-        {project.tags.map((tag) => (
-          <span
-            key={tag}
-            className="rounded-full bg-white/[.06] px-2.5 py-0.5 text-xs text-zinc-300"
-          >
-            {tag}
-          </span>
-        ))}
-      </div>
-
-      {(project.href || project.repo) && (
-        <div className="relative flex gap-4 pt-2 text-sm font-medium">
-          {project.href && (
-            <a
-              href={project.href}
-              className="flex items-center gap-1.5 text-zinc-400 transition-colors hover:text-white"
-            >
-              Live <ExternalLink size={14} />
-            </a>
-          )}
-          {project.repo && (
-            <a
-              href={project.repo}
-              className="flex items-center gap-1.5 text-zinc-400 transition-colors hover:text-white"
-            >
-              Code <Code size={14} />
-            </a>
-          )}
-        </div>
+      {isCompleted && project.liveUrl && (
+        <a
+          href={project.liveUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`relative mt-auto inline-flex w-fit items-center text-xs font-bold uppercase tracking-widest text-zinc-400 transition-colors duration-300 ${accentCta[project.accent]}`}
+        >
+          View Project ↗
+        </a>
       )}
     </div>
   );

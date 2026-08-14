@@ -7,15 +7,20 @@
 
 ## Tech Stack
 
-React, Next.js (App Router), Tailwind CSS, TypeScript, Lucide icons.
+React, Next.js (App Router), Tailwind CSS, TypeScript. No icon library — the UI is purely typographic.
 
 ## Style
 
-Dark mode by default. Modern, clean, responsive, fast — no unnecessary animation or bloat.
+Strict black & white theme — zero gradients anywhere. Brutalist, monospace typography (Space Mono by
+default; swap in local fonts via `next/font/local` if added later). Dark by default, stark and
+minimalist. No decorative icons, no unnecessary animation.
 
 ## Priority Projects
 
-Feature these in the Projects section, in this order: SkillPort, EcoLog, FocusFlow.
+Feature these in the Projects "Bento Box" grid, in this order: PixelDerm, SkillPort, SyncSpace, EcoLog.
+PixelDerm, SkillPort, and SyncSpace are "Completed / Live"; EcoLog is "In Development". Each project card
+gets a distinct hover accent (defined per-project in `src/data/projects.ts`) that breaks the monochrome
+theme only on hover.
 
 ## Code Guidelines
 
