@@ -34,15 +34,6 @@ export default function Footer() {
           >
             <LinkIcon size={18} />
           </a>
-          <a
-            href={site.social.twitter}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Twitter"
-            className="transition-colors hover:text-black dark:hover:text-white"
-          >
-            <Send size={18} />
-          </a>
         </div>
       </div>
     </footer>
