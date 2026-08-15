@@ -1,21 +1,20 @@
 @import "tailwindcss";
 
-@custom-variant dark (&:where(.dark, .dark *));
-
 :root {
-  --background: #000000;
-  --foreground: #ffffff;
+  --background: #faf9f6;
+  --foreground: #000000;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-mono: var(--font-plus-jakarta);
-  --font-sans: var(--font-jetbrains-mono);
+  --font-heading: var(--font-space-grotesk);
+  --font-body: var(--font-jetbrains-mono);
+  --font-button: var(--font-space-mono);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-body), ui-monospace, monospace;
 }

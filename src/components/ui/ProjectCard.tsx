@@ -3,21 +3,21 @@ import StatusBadge from "@/components/ui/StatusBadge";
 import DeviceFrame from "@/components/ui/DeviceFrame";
 
 const accentBorder = {
-  mono: "hover:border-white",
-  green: "hover:border-emerald-400",
+  mono: "hover:border-black",
+  green: "hover:border-emerald-500",
   "blue-purple": "hover:border-t-blue-500 hover:border-b-purple-500",
 } as const;
 
 const accentTitle = {
-  mono: "group-hover:text-white",
-  green: "group-hover:text-emerald-300",
-  "blue-purple": "group-hover:text-blue-300",
+  mono: "group-hover:text-black",
+  green: "group-hover:text-emerald-600",
+  "blue-purple": "group-hover:text-blue-600",
 } as const;
 
 const accentCta = {
-  mono: "group-hover:text-white",
-  green: "group-hover:text-emerald-300",
-  "blue-purple": "group-hover:text-purple-300",
+  mono: "group-hover:text-black",
+  green: "group-hover:text-emerald-600",
+  "blue-purple": "group-hover:text-purple-600",
 } as const;
 
 export default function ProjectCard({ project }: { project: Project }) {
@@ -25,54 +25,50 @@ export default function ProjectCard({ project }: { project: Project }) {
 
   return (
     <div
-      className={`group relative flex h-full flex-col gap-6 overflow-hidden border border-white/15 bg-black p-6 transition-colors duration-300 sm:p-8 ${accentBorder[project.accent]}`}
+      className={`group relative flex h-full flex-col gap-6 overflow-hidden border border-black/10 bg-white/40 p-6 shadow-[0_4px_24px_rgba(0,0,0,0.04)] backdrop-blur-md transition-all duration-300 hover:-translate-y-2 hover:bg-white/60 hover:shadow-[0_20px_45px_rgba(0,0,0,0.10)] hover:backdrop-blur-xl sm:p-8 ${accentBorder[project.accent]}`}
     >
       {project.accent === "mono" && (
         <div
           aria-hidden
-          className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-white/0 blur-3xl transition-colors duration-500 group-hover:bg-white/10"
+          className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-black/0 blur-3xl transition-colors duration-500 group-hover:bg-black/[.06]"
         />
       )}
       {project.accent === "green" && (
         <div
           aria-hidden
-          className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-emerald-500/0 blur-3xl transition-colors duration-500 group-hover:bg-emerald-500/15"
+          className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-emerald-400/0 blur-3xl transition-colors duration-500 group-hover:bg-emerald-400/30"
         />
       )}
       {project.accent === "blue-purple" && (
         <>
           <div
             aria-hidden
-            className="pointer-events-none absolute -left-10 -top-10 h-40 w-40 rounded-full bg-blue-600/0 blur-3xl transition-colors duration-500 group-hover:bg-blue-600/20"
+            className="pointer-events-none absolute -left-10 -top-10 h-40 w-40 rounded-full bg-blue-500/0 blur-3xl transition-colors duration-500 group-hover:bg-blue-500/25"
           />
           <div
             aria-hidden
-            className="pointer-events-none absolute -bottom-10 -right-10 h-40 w-40 rounded-full bg-purple-600/0 blur-3xl transition-colors duration-500 group-hover:bg-purple-600/20"
+            className="pointer-events-none absolute -bottom-10 -right-10 h-40 w-40 rounded-full bg-purple-500/0 blur-3xl transition-colors duration-500 group-hover:bg-purple-500/25"
           />
         </>
       )}
 
-      {/* frosted glass layer — catches the accent glow behind it on hover */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 bg-white/0 opacity-0 backdrop-blur-none transition-all duration-500 group-hover:bg-white/[.04] group-hover:opacity-100 group-hover:backdrop-blur-md"
-      />
-
       <div className="relative flex items-start justify-between gap-3">
         <div className="flex flex-col gap-1.5">
           <h3
-            className={`text-2xl font-extrabold uppercase tracking-tight transition-colors duration-300 ${accentTitle[project.accent]}`}
+            className={`font-heading text-2xl font-bold uppercase tracking-tight text-black transition-colors duration-300 ${accentTitle[project.accent]}`}
           >
             {project.title}
           </h3>
-          <p className="font-mono text-[11px] uppercase tracking-widest text-zinc-500">
+          <p className="font-body text-[11px] uppercase tracking-widest text-black/45">
             {project.stack.join(" / ")}
           </p>
         </div>
         <StatusBadge status={project.status} />
       </div>
 
-      <p className="relative text-sm leading-relaxed text-zinc-400">{project.description}</p>
+      <p className="relative font-body text-sm leading-relaxed text-black/65">
+        {project.description}
+      </p>
 
       <div
         className={
@@ -100,7 +96,7 @@ export default function ProjectCard({ project }: { project: Project }) {
           href={project.liveUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className={`relative mt-auto inline-flex w-fit items-center pt-1 font-mono text-xs font-bold uppercase tracking-widest text-zinc-400 transition-colors duration-300 ${accentCta[project.accent]}`}
+          className={`relative mt-auto inline-flex w-fit items-center gap-1 pt-1 font-button text-xs font-bold uppercase tracking-widest text-black/50 transition-all duration-300 hover:scale-105 ${accentCta[project.accent]}`}
         >
           View Project ↗
         </a>

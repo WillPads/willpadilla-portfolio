@@ -1,13 +1,14 @@
 import { skills } from "@/data/site";
 import SectionHeading from "@/components/ui/SectionHeading";
+import Reveal from "@/components/ui/Reveal";
 
 export default function About() {
   return (
-    <section id="about" className="border-b border-white/15">
-      <div className="mx-auto w-full max-w-5xl px-6 py-24">
+    <section id="about" className="border-b border-black/10">
+      <Reveal className="mx-auto w-full max-w-5xl px-6 py-24">
         <SectionHeading eyebrow="About" title="A bit about me" />
         <div className="grid gap-12 sm:grid-cols-2">
-          <p className="text-lg leading-relaxed text-zinc-400">
+          <p className="font-body text-lg leading-relaxed text-black/70">
             Replace this paragraph with a short bio: your background, what you focus
             on, and what kind of work you&apos;re looking for. Keep it to two or three
             sentences — visitors will read the projects below for the details.
@@ -16,14 +17,14 @@ export default function About() {
             {skills.map((skill) => (
               <span
                 key={skill}
-                className="border border-white/20 px-3 py-1 font-mono text-xs uppercase tracking-wider text-zinc-400"
+                className="border border-black/15 bg-white/40 px-3 py-1 font-button text-xs uppercase tracking-wider text-black/70 backdrop-blur-sm"
               >
                 {skill}
               </span>
             ))}
           </div>
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 }

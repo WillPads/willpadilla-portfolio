@@ -1,41 +1,44 @@
 import { site } from "@/data/site";
+import Reveal from "@/components/ui/Reveal";
 
 export default function Introduction() {
   return (
-    <section className="border-b border-white/15">
-      <div className="mx-auto flex w-full max-w-5xl flex-col items-start gap-7 px-6 py-28 sm:py-40">
-        <span className="border border-white/20 px-4 py-1.5 font-mono text-xs uppercase tracking-widest text-zinc-400 sm:text-sm">
+    <section className="border-b border-black/10">
+      <Reveal className="mx-auto flex w-full max-w-5xl flex-col items-start gap-7 px-6 py-28 sm:py-40">
+        <span className="border border-black/15 bg-white/40 px-4 py-1.5 font-body text-xs uppercase tracking-widest text-black/70 backdrop-blur-md sm:text-sm">
           {site.tagline}
         </span>
 
-        <h1 className="max-w-4xl text-5xl font-extrabold uppercase leading-[0.95] tracking-tight sm:text-7xl">
-          What&apos;s up, <span className="bg-white px-3 text-black">Will</span>?
+        <h1 className="max-w-4xl font-heading text-5xl font-bold uppercase leading-[0.95] tracking-tight text-black sm:text-7xl">
+          What&apos;s up, <span className="bg-black px-3 text-white">Will</span>?
         </h1>
 
-        <p className="max-w-2xl text-lg leading-relaxed text-zinc-400 sm:text-xl">{site.intro}</p>
+        <p className="max-w-2xl font-body text-lg leading-relaxed text-black/70 sm:text-xl">
+          {site.intro}
+        </p>
 
         <div className="flex flex-col gap-6 pt-8">
           <div className="flex flex-wrap items-center gap-4">
             <a
               href="#projects"
-              className="border border-white bg-white px-8 py-4 font-mono text-sm font-bold uppercase tracking-widest text-black transition-colors hover:bg-black hover:text-white"
+              className="border border-black bg-black px-8 py-4 font-button text-sm font-bold uppercase tracking-widest text-white transition-all duration-300 hover:scale-105 hover:shadow-[0_12px_30px_rgba(0,0,0,0.25)]"
             >
               View Projects →
             </a>
             <a
               href="#contact"
-              className="border border-white/30 px-6 py-4 font-mono text-xs font-bold uppercase tracking-widest text-white transition-colors hover:border-white hover:bg-white/5"
+              className="border border-black/25 px-6 py-4 font-button text-xs font-bold uppercase tracking-widest text-black transition-all duration-300 hover:scale-105 hover:border-black hover:bg-black/5 hover:backdrop-blur-md"
             >
               Contact Me
             </a>
           </div>
 
-          <div className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-widest text-zinc-500">
+          <div className="flex items-center gap-2 font-button text-[11px] uppercase tracking-widest text-black/50">
             <a
               href={site.social.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="border border-white/15 px-3.5 py-2 transition-colors hover:border-white/40 hover:text-white"
+              className="border border-black/15 px-3.5 py-2 transition-all duration-300 hover:scale-105 hover:border-black/40 hover:bg-black/5 hover:text-black hover:backdrop-blur-md"
             >
               GitHub ↗
             </a>
@@ -43,13 +46,13 @@ export default function Introduction() {
               href={site.social.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="border border-white/15 px-3.5 py-2 transition-colors hover:border-white/40 hover:text-white"
+              className="border border-black/15 px-3.5 py-2 transition-all duration-300 hover:scale-105 hover:border-black/40 hover:bg-black/5 hover:text-black hover:backdrop-blur-md"
             >
               LinkedIn ↗
             </a>
           </div>
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 }

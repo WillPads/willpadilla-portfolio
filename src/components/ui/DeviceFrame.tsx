@@ -11,7 +11,7 @@ export default function DeviceFrame({
   alt?: string;
 }) {
   const isMobile = variant === "mobile";
-  const frameClasses = `relative flex shrink-0 items-center justify-center overflow-hidden border border-dashed border-white/20 ${
+  const frameClasses = `relative flex shrink-0 items-center justify-center overflow-hidden border border-dashed border-black/20 ${
     isMobile ? "aspect-[9/19] w-24" : "aspect-[16/10] w-full"
   }`;
 
@@ -31,7 +31,7 @@ export default function DeviceFrame({
 
   return (
     <div className={frameClasses}>
-      <span className="px-2 text-center font-mono text-[10px] uppercase tracking-widest text-zinc-600">
+      <span className="px-2 text-center font-body text-[10px] uppercase tracking-widest text-black/35">
         Screenshot
       </span>
     </div>

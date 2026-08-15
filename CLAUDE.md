@@ -11,19 +11,27 @@ React, Next.js (App Router), Tailwind CSS, TypeScript. No icon library — the U
 
 ## Style
 
-Strict black & white theme — zero gradients anywhere (accent colors only ever appear as solid hover
-states, never blended). Typography is paired for contrast: Plus Jakarta Sans for headings and body
-copy, JetBrains Mono for nav, tags, badges, and buttons — every UI-chrome element gets an explicit
-`font-mono` class since the body default is now the sans face. Dark by default, stark and minimalist.
-No decorative icons, no unnecessary animation. Project cards get a subtle backdrop-blur "frosted glass"
-layer on hover, sitting between the accent glow blob and the content, for depth without gradients.
+Light theme: background is soft off-white (`#FAF9F6`), all text solid black (opacity variants for
+hierarchy, never a different hue/gray palette) — zero gradients anywhere. Three-way typography split:
+`font-heading` (Space Grotesk) for h1/h2/h3, `font-body` (JetBrains Mono, the body default) for
+paragraphs/descriptions/taglines, `font-button` (Space Mono) for nav, buttons, badges, tags, and contact
+links. Glassmorphism is persistent, not hover-only: project cards, the sticky nav, the tagline pill, and
+the contact panel all carry `bg-white/40 backdrop-blur-md` at rest, deepening further on hover
+(`backdrop-blur-xl`) — never via gradients. Project cards additionally lift on hover (`-translate-y-2`)
+and pick up their per-project accent glow (see below). Buttons/links get a "frosted bubble" hover: a
+translucent `bg-black/5` fill fades in with `backdrop-blur-md` plus `scale-105` (note: Tailwind v4's
+`scale-*` sets the native CSS `scale` property, not `transform` — check `getComputedStyle(el).scale`
+when debugging, not `.transform`). Sections wrap their content in `src/components/ui/Reveal.tsx`, a
+client component that fades content in/out via `IntersectionObserver` as it crosses the (margin-shrunk)
+viewport edges — respects `prefers-reduced-motion`. No decorative icons.
 
 ## Priority Projects
 
 Feature these in the Projects "Bento Box" grid, in this order: PixelDerm, SkillPort, SyncSpace, EcoLog.
 PixelDerm, SkillPort, and SyncSpace are "Completed / Live"; EcoLog is "In Development". Each project card
 gets a distinct hover accent (defined per-project in `src/data/projects.ts`) that breaks the monochrome
-theme only on hover.
+theme only on hover: PixelDerm stays black/white, SkillPort goes emerald, SyncSpace splits blue (top
+border)/purple (bottom border).
 
 ## Code Guidelines
 
