@@ -25,7 +25,7 @@ export default function ProjectCard({ project }: { project: Project }) {
 
   return (
     <div
-      className={`group relative flex h-full flex-col gap-5 overflow-hidden border border-white/15 bg-black p-6 transition-colors duration-300 sm:p-8 ${accentBorder[project.accent]}`}
+      className={`group relative flex h-full flex-col gap-6 overflow-hidden border border-white/15 bg-black p-6 transition-colors duration-300 sm:p-8 ${accentBorder[project.accent]}`}
     >
       {project.accent === "mono" && (
         <div
@@ -52,21 +52,27 @@ export default function ProjectCard({ project }: { project: Project }) {
         </>
       )}
 
+      {/* frosted glass layer — catches the accent glow behind it on hover */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 bg-white/0 opacity-0 backdrop-blur-none transition-all duration-500 group-hover:bg-white/[.04] group-hover:opacity-100 group-hover:backdrop-blur-md"
+      />
+
       <div className="relative flex items-start justify-between gap-3">
-        <div className="flex flex-col gap-1">
+        <div className="flex flex-col gap-1.5">
           <h3
-            className={`text-xl font-bold uppercase tracking-tight transition-colors duration-300 ${accentTitle[project.accent]}`}
+            className={`text-2xl font-extrabold uppercase tracking-tight transition-colors duration-300 ${accentTitle[project.accent]}`}
           >
             {project.title}
           </h3>
-          <p className="text-[11px] uppercase tracking-widest text-zinc-500">
+          <p className="font-mono text-[11px] uppercase tracking-widest text-zinc-500">
             {project.stack.join(" / ")}
           </p>
         </div>
         <StatusBadge status={project.status} />
       </div>
 
-      <p className="relative text-sm text-zinc-400">{project.description}</p>
+      <p className="relative text-sm leading-relaxed text-zinc-400">{project.description}</p>
 
       <div
         className={
@@ -94,7 +100,7 @@ export default function ProjectCard({ project }: { project: Project }) {
           href={project.liveUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className={`relative mt-auto inline-flex w-fit items-center text-xs font-bold uppercase tracking-widest text-zinc-400 transition-colors duration-300 ${accentCta[project.accent]}`}
+          className={`relative mt-auto inline-flex w-fit items-center pt-1 font-mono text-xs font-bold uppercase tracking-widest text-zinc-400 transition-colors duration-300 ${accentCta[project.accent]}`}
         >
           View Project ↗
         </a>

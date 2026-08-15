@@ -5,7 +5,7 @@ import ProjectCard from "@/components/ui/ProjectCard";
 export default function ProjectsSection() {
   return (
     <section id="projects" className="border-b border-white/15">
-      <div className="mx-auto w-full max-w-5xl px-6 py-20">
+      <div className="mx-auto w-full max-w-5xl px-6 pt-20 pb-28">
         <SectionHeading eyebrow="Projects" title="Selected work" />
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((project) => (

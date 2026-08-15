@@ -5,7 +5,7 @@ export default function StatusBadge({ status }: { status: ProjectStatus }) {
 
   return (
     <span
-      className={`inline-block whitespace-nowrap border px-2.5 py-1 text-[10px] font-bold uppercase tracking-widest ${
+      className={`inline-block whitespace-nowrap border px-2.5 py-1 font-mono text-[10px] font-bold uppercase tracking-widest ${
         isCompleted ? "border-white bg-white text-black" : "border-white/30 text-zinc-400"
       }`}
     >

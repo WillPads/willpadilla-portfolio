@@ -11,9 +11,12 @@ React, Next.js (App Router), Tailwind CSS, TypeScript. No icon library — the U
 
 ## Style
 
-Strict black & white theme — zero gradients anywhere. Brutalist, monospace typography (Space Mono by
-default; swap in local fonts via `next/font/local` if added later). Dark by default, stark and
-minimalist. No decorative icons, no unnecessary animation.
+Strict black & white theme — zero gradients anywhere (accent colors only ever appear as solid hover
+states, never blended). Typography is paired for contrast: Plus Jakarta Sans for headings and body
+copy, JetBrains Mono for nav, tags, badges, and buttons — every UI-chrome element gets an explicit
+`font-mono` class since the body default is now the sans face. Dark by default, stark and minimalist.
+No decorative icons, no unnecessary animation. Project cards get a subtle backdrop-blur "frosted glass"
+layer on hover, sitting between the accent glow blob and the content, for depth without gradients.
 
 ## Priority Projects
 

@@ -34,9 +34,9 @@ export const projects: Project[] = [
     device: "mobile",
     screenshotCount: 3,
     screenshots: [
-      { src: "/projects/pixelderm-1.JPG", alt: "PixelDerm dashboard" },
-      { src: "/projects/pixelderm-2.jpg", alt: "PixelDerm capture and tips screen" },
-      { src: "/projects/pixelderm-4.jpg", alt: "PixelDerm analysis results" },
+      { src: "/projects/pixelderm-1.JPG", alt: "PixelDerm Homepage" },
+      { src: "/projects/pixelderm-2.jpg", alt: "PixelDerm Pre-Capture screen" },
+      { src: "/projects/pixelderm-4.jpg", alt: "PixelDerm Analysis -Results" },
     ],
     liveUrl: "https://github.com/WillPads/pixelderm",
     span: "wide",
