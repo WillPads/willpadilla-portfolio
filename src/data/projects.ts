@@ -42,19 +42,6 @@ export const projects: Project[] = [
     span: "wide",
   },
   {
-    title: "SkillPort",
-    tagline: "Peer-to-Peer Micro-Mentorship & Skill Barter Platform",
-    description:
-      "Matches students for short, focused mentorship swaps — trade a skill you know for one you want to learn, no one-way tutoring required.",
-    stack: ["React", "Spring Boot", "WebRTC"],
-    status: "completed",
-    accent: "green",
-    device: "desktop",
-    screenshotCount: 2,
-    liveUrl: "#",
-    span: "normal",
-  },
-  {
     title: "SyncSpace",
     tagline: "Synchronous Co-Working & Pomodoro Room App",
     description:
@@ -66,17 +53,5 @@ export const projects: Project[] = [
     screenshotCount: 2,
     liveUrl: "#",
     span: "normal",
-  },
-  {
-    title: "EcoLog",
-    tagline: "Campus & Community Carbon/Waste Impact Tracker",
-    description:
-      "Logs and visualizes carbon and waste impact across campus activities, turning everyday habits into data that nudges greener choices.",
-    stack: ["Data Analytics", "Next.js", "Tailwind"],
-    status: "in-development",
-    accent: "mono",
-    device: "desktop",
-    screenshotCount: 2,
-    span: "wide",
   },
 ];

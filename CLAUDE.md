@@ -27,11 +27,10 @@ viewport edges — respects `prefers-reduced-motion`. No decorative icons.
 
 ## Priority Projects
 
-Feature these in the Projects "Bento Box" grid, in this order: PixelDerm, SkillPort, SyncSpace, EcoLog.
-PixelDerm, SkillPort, and SyncSpace are "Completed / Live"; EcoLog is "In Development". Each project card
-gets a distinct hover accent (defined per-project in `src/data/projects.ts`) that breaks the monochrome
-theme only on hover: PixelDerm stays black/white, SkillPort goes emerald, SyncSpace splits blue (top
-border)/purple (bottom border).
+Feature these in the Projects "Bento Box" grid, in this order: PixelDerm, SyncSpace. Both are
+"Completed / Live". Each project card gets a distinct hover accent (defined per-project in
+`src/data/projects.ts`) that breaks the monochrome theme only on hover: PixelDerm stays black/white,
+SyncSpace splits blue (top border)/purple (bottom border).
 
 ## Code Guidelines
 
