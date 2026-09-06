@@ -32,10 +32,12 @@ export const projects: Project[] = [
     status: "completed",
     accent: "mono",
     device: "mobile",
-    screenshotCount: 3,
+    screenshotCount: 5,
     screenshots: [
+      { src: "/projects/pixelderm logo.jpg", alt: "PixelDerm Logo" }, 
       { src: "/projects/pixelderm-1.JPG", alt: "PixelDerm Homepage" },
       { src: "/projects/pixelderm-2.jpg", alt: "PixelDerm Pre-Capture screen" },
+      { src: "/projects/pixelderm-3.jpg", alt: "PixelDerm Analysis - Image Analysis" },
       { src: "/projects/pixelderm-4.jpg", alt: "PixelDerm Analysis -Results" },
     ],
     liveUrl: "https://github.com/WillPads/pixelderm",

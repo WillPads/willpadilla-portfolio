@@ -1,14 +1,13 @@
 export const site = {
-  name: "Will Padilla",
-  role: "Software Engineer & CS Student at FEU Tech",
+  role: "Project Manager & Computer Science Student at FEU Tech",
   tagline: "To develop with purpose, pushed by passion",
   intro:
-    "What's up, Will? I'm a Software Engineer and Computer Science student at FEU Tech who believes great software developed with purpose, pushed by passion.",
-  email: "willpadilla1111@gmail.com",
+    "I'm a Computer Science student at FEU Tech who strivestoward great software developed with purpose, pushed by passion.",
+  email: "wgabriel.padilla@gmail.com",
   location: "España, Manila",
   social: {
     github: "https://github.com/WillPads/WPadilla",
-    linkedin: "https://www.linkedin.com/in/will-padilla-855489386/",
+    linkedin: "https://www.linkedin.com/in/will-padilla/",
   },
 };
 
@@ -24,7 +23,8 @@ export const skills = [
   "Next.js",
   "Node.js",
   "Tailwind CSS",
-  "PostgreSQL",
-  "GraphQL",
-  "Docker",
+  "SQLite",
+  "Java",
+  "Python",
+  "C++",
 ];
