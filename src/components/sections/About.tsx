@@ -13,11 +13,11 @@ export default function About() {
             on, and what kind of work you&apos;re looking for. Keep it to two or three
             sentences — visitors will read the projects below for the details.
           </p>
-          <div className="flex flex-wrap content-start gap-1.5">
+          <div id="skills" className="flex scroll-mt-24 flex-wrap content-start gap-1.5">
             {skills.map((skill) => (
               <span
                 key={skill}
-                className="border border-black/15 bg-white/40 px-3 py-1 font-button text-xs uppercase tracking-wider text-black/70 backdrop-blur-sm"
+                className="border border-black/15 px-3 py-1 font-button text-xs uppercase tracking-wider text-black/70"
               >
                 {skill}
               </span>

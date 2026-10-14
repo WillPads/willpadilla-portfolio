@@ -9,6 +9,7 @@ export type ProjectScreenshot = {
 
 export type Project = {
   title: string;
+  role: string;
   tagline: string;
   description: string;
   stack: string[];
@@ -24,6 +25,7 @@ export type Project = {
 export const projects: Project[] = [
   {
     title: "PixelDerm",
+    role: "Project Manager & Developer",
     tagline:
       "Android-based Mobile Platform for Longitudinal Skin Damage Analysis & Monitoring",
     description:
@@ -34,7 +36,7 @@ export const projects: Project[] = [
     device: "mobile",
     screenshotCount: 5,
     screenshots: [
-      { src: "/projects/pixelderm logo.jpg", alt: "PixelDerm Logo" }, 
+      { src: "/projects/pixelderm logo.png", alt: "PixelDerm Logo" }, 
       { src: "/projects/pixelderm-1.JPG", alt: "PixelDerm Homepage" },
       { src: "/projects/pixelderm-2.jpg", alt: "PixelDerm Pre-Capture screen" },
       { src: "/projects/pixelderm-3.jpg", alt: "PixelDerm Analysis - Image Analysis" },
@@ -45,15 +47,15 @@ export const projects: Project[] = [
   },
   {
     title: "SyncSpace",
+    role: "Full-stack Developer",
     tagline: "Synchronous Co-Working & Pomodoro Room App",
     description:
-      "Shared real-time rooms with synced Pomodoro timers, so study groups and remote teams can focus together instead of alone.",
-    stack: ["Real-time", "WebSockets", "Tailwind"],
-    status: "completed",
+      "Shared real-time rooms with synced Pomodoro timers, tasks and notes, so study groups and remote teams can focus together instead of alone. Includes role-based access, a WebSocket sync engine and a quiz pipeline built from uploaded documents. Currently being prepared for deployment.",
+    stack: ["Next.js", "Express", "Prisma", "SQLite", "WebSockets"],
+    status: "in-development",
     accent: "blue-purple",
     device: "desktop",
     screenshotCount: 2,
-    liveUrl: "#",
     span: "normal",
   },
 ];

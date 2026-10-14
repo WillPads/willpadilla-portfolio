@@ -25,7 +25,7 @@ export default function ProjectCard({ project }: { project: Project }) {
 
   return (
     <div
-      className={`group relative flex h-full flex-col gap-6 overflow-hidden border border-black/10 bg-white/40 p-6 shadow-[0_4px_24px_rgba(0,0,0,0.04)] backdrop-blur-md transition-all duration-300 hover:-translate-y-2 hover:bg-white/60 hover:shadow-[0_20px_45px_rgba(0,0,0,0.10)] hover:backdrop-blur-xl sm:p-8 ${accentBorder[project.accent]}`}
+      className={`group relative flex h-full flex-col gap-6 overflow-hidden border border-black/10 bg-background p-6 transition-all duration-300 hover:-translate-y-2 hover:bg-white hover:shadow-[0_20px_45px_rgba(0,0,0,0.10)] sm:p-8 ${accentBorder[project.accent]}`}
     >
       {project.accent === "mono" && (
         <div
@@ -59,7 +59,10 @@ export default function ProjectCard({ project }: { project: Project }) {
           >
             {project.title}
           </h3>
-          <p className="font-body text-[11px] uppercase tracking-widest text-black/45">
+          <p className="font-button text-[11px] font-bold uppercase tracking-widest text-black/70">
+            {project.role}
+          </p>
+          <p className="font-body text-[11px] uppercase tracking-widest text-black/60">
             {project.stack.join(" / ")}
           </p>
         </div>
@@ -96,7 +99,7 @@ export default function ProjectCard({ project }: { project: Project }) {
           href={project.liveUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className={`relative mt-auto inline-flex w-fit items-center gap-1 pt-1 font-button text-xs font-bold uppercase tracking-widest text-black/50 transition-all duration-300 hover:scale-105 ${accentCta[project.accent]}`}
+          className={`relative mt-auto inline-flex w-fit items-center gap-1 py-3.5 font-button text-xs font-bold uppercase tracking-widest text-black/60 transition-all duration-300 hover:scale-105 ${accentCta[project.accent]}`}
         >
           View Project ↗
         </a>

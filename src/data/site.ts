@@ -1,8 +1,10 @@
 export const site = {
-  role: "Project Manager & Computer Science Student at FEU Tech",
+  name: "Will Padilla",
+  role: "Software Engineer & Computer Science Student at FEU Tech",
   tagline: "To develop with purpose, pushed by passion",
   intro:
-    "I'm a Computer Science student at FEU Tech who strivestoward great software developed with purpose, pushed by passion.",
+    "I'm a Computer Science student at FEU Tech who strives toward great software developed with purpose, pushed by passion.",
+  resume: "/resume.pdf",
   email: "wgabriel.padilla@gmail.com",
   location: "España, Manila",
   social: {
@@ -12,8 +14,9 @@ export const site = {
 };
 
 export const nav = [
+  { label: "Work", href: "#projects" },
   { label: "About", href: "#about" },
-  { label: "Projects", href: "#projects" },
+  { label: "Skills", href: "#skills" },
   { label: "Contact", href: "#contact" },
 ];
 

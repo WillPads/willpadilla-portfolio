@@ -31,7 +31,7 @@ export default function DeviceFrame({
 
   return (
     <div className={frameClasses}>
-      <span className="px-2 text-center font-body text-[10px] uppercase tracking-widest text-black/35">
+      <span className="px-2 text-center font-body text-[10px] uppercase tracking-widest text-black/60">
         Screenshot
       </span>
     </div>

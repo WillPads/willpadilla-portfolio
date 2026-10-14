@@ -15,9 +15,8 @@ Light theme: background is soft off-white (`#FAF9F6`), all text solid black (opa
 hierarchy, never a different hue/gray palette) — zero gradients anywhere. Three-way typography split:
 `font-heading` (Space Grotesk) for h1/h2/h3, `font-body` (JetBrains Mono, the body default) for
 paragraphs/descriptions/taglines, `font-button` (Space Mono) for nav, buttons, badges, tags, and contact
-links. Glassmorphism is persistent, not hover-only: project cards, the sticky nav, the tagline pill, and
-the contact panel all carry `bg-white/40 backdrop-blur-md` at rest, deepening further on hover
-(`backdrop-blur-xl`) — never via gradients. Project cards additionally lift on hover (`-translate-y-2`)
+links. Surfaces are flat: thin `border-black/10` borders on `bg-background`, no persistent blur or translucency
+(decided 2026-10-15). Hover effects (lift, shadow, per-project accent) stay — never via gradients. Project cards additionally lift on hover (`-translate-y-2`)
 and pick up their per-project accent glow (see below). Buttons/links get a "frosted bubble" hover: a
 translucent `bg-black/5` fill fades in with `backdrop-blur-md` plus `scale-105` (note: Tailwind v4's
 `scale-*` sets the native CSS `scale` property, not `transform` — check `getComputedStyle(el).scale`
@@ -27,8 +26,8 @@ viewport edges — respects `prefers-reduced-motion`. No decorative icons.
 
 ## Priority Projects
 
-Feature these in the Projects "Bento Box" grid, in this order: PixelDerm, SyncSpace. Both are
-"Completed / Live". Each project card gets a distinct hover accent (defined per-project in
+Feature these in the Projects "Bento Box" grid, in this order: PixelDerm, SyncSpace. PixelDerm is
+"Completed / Live"; SyncSpace is "In Development" until it is deployed (then flip its status and add `liveUrl`). Each project card gets a distinct hover accent (defined per-project in
 `src/data/projects.ts`) that breaks the monochrome theme only on hover: PixelDerm stays black/white,
 SyncSpace splits blue (top border)/purple (bottom border).
 

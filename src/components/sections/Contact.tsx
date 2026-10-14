@@ -7,7 +7,7 @@ export default function Contact() {
     <section id="contact">
       <Reveal className="mx-auto w-full max-w-5xl px-6 py-28">
         <SectionHeading eyebrow="Contact" title="Let's work together" />
-        <div className="flex flex-col items-start gap-8 border border-black/10 bg-white/40 p-10 backdrop-blur-md sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex flex-col items-start gap-8 border border-black/10 p-6 sm:p-10 sm:flex-row sm:items-center sm:justify-between">
           <p className="max-w-md font-body text-lg leading-relaxed text-black/70">
             Have a project in mind or just want to say hi? My inbox is open.
           </p>

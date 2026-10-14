@@ -5,7 +5,7 @@ export default function Introduction() {
   return (
     <section className="border-b border-black/10">
       <Reveal className="mx-auto flex w-full max-w-5xl flex-col items-start gap-7 px-6 py-28 sm:py-40">
-        <span className="border border-black/15 bg-white/40 px-4 py-1.5 font-body text-xs uppercase tracking-widest text-black/70 backdrop-blur-md sm:text-sm">
+        <span className="border border-black/15 px-4 py-1.5 font-body text-xs uppercase tracking-widest text-black/70 sm:text-sm">
           {site.tagline}
         </span>
 
@@ -20,25 +20,33 @@ export default function Introduction() {
         <div className="flex flex-col gap-6 pt-8">
           <div className="flex flex-wrap items-center gap-4">
             <a
-              href="#projects"
+              href={site.resume}
+              target="_blank"
+              rel="noopener noreferrer"
               className="border border-black bg-black px-8 py-4 font-button text-sm font-bold uppercase tracking-widest text-white transition-all duration-300 hover:scale-105 hover:shadow-[0_12px_30px_rgba(0,0,0,0.25)]"
+            >
+              Resume ↗
+            </a>
+            <a
+              href="#projects"
+              className="border border-black/25 px-6 py-4 font-button text-xs font-bold uppercase tracking-widest text-black transition-all duration-300 hover:scale-105 hover:border-black hover:bg-black/5"
             >
               View Projects →
             </a>
             <a
-              href="#contact"
+              href={`mailto:${site.email}`}
               className="border border-black/25 px-6 py-4 font-button text-xs font-bold uppercase tracking-widest text-black transition-all duration-300 hover:scale-105 hover:border-black hover:bg-black/5 hover:backdrop-blur-md"
             >
               Contact Me
             </a>
           </div>
 
-          <div className="flex items-center gap-2 font-button text-[11px] uppercase tracking-widest text-black/50">
+          <div className="flex items-center gap-2 font-button text-[11px] uppercase tracking-widest text-black/60">
             <a
               href={site.social.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="border border-black/15 px-3.5 py-2 transition-all duration-300 hover:scale-105 hover:border-black/40 hover:bg-black/5 hover:text-black hover:backdrop-blur-md"
+              className="border border-black/15 px-4 py-3.5 transition-all duration-300 hover:scale-105 hover:border-black/40 hover:bg-black/5 hover:text-black hover:backdrop-blur-md"
             >
               GitHub ↗
             </a>
@@ -46,7 +54,7 @@ export default function Introduction() {
               href={site.social.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="border border-black/15 px-3.5 py-2 transition-all duration-300 hover:scale-105 hover:border-black/40 hover:bg-black/5 hover:text-black hover:backdrop-blur-md"
+              className="border border-black/15 px-4 py-3.5 transition-all duration-300 hover:scale-105 hover:border-black/40 hover:bg-black/5 hover:text-black hover:backdrop-blur-md"
             >
               LinkedIn ↗
             </a>
